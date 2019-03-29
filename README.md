@@ -1,6 +1,6 @@
 # About datasets
-
-
+Letter, cardio, opticaldigts and pen datasets is available in [ODDS library](http://odds.cs.stonybrook.edu/).
+Satellite dataset can be download in [Unsupervised Anomaly Detection Benchmark](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OPQMVF).
 
 
 # The whole code is coming soon...
