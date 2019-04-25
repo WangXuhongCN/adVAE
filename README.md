@@ -1,7 +1,11 @@
 # About datasets
-Letter, cardio, opticaldigts and pen datasets is available in [ODDS library](http://odds.cs.stonybrook.edu/).  
-Satellite dataset can be download in [Unsupervised Anomaly Detection Benchmark](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OPQMVF).  
-These datasets are also included in file folder "**datasets**".
+[Letter](http://odds.cs.stonybrook.edu/letter-recognition-dataset/), 
+[cardio](http://odds.cs.stonybrook.edu/cardiotocogrpahy-dataset/), 
+[opticaldigts](http://odds.cs.stonybrook.edu/optdigits-dataset/)
+ and [pen](http://odds.cs.stonybrook.edu/pendigits-dataset/)
+datasets is available in [ODDS library](http://odds.cs.stonybrook.edu/).  
+[Satellite](https://dataverse.harvard.edu/file.xhtml?persistentId=doi:10.7910/DVN/OPQMVF/UNGQHH&version=1.0) dataset can be download in [Unsupervised Anomaly Detection Benchmark](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OPQMVF).  
+These datasets are also included in file folder ["**datasets**"](https://github.com/WangXuhongCN/adVAE/tree/master/datasets).
 
 # Requirements
 pytorch>=1.0  
