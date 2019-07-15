@@ -13,7 +13,7 @@ def plot_ROC(y_test, recon_error_test):
     plt.ylim([0, 1.001])
     plt.ylabel('True Positive Rate')
     plt.xlabel('False Positive Rate')
-    plt.savefig('VAE_ROC',dpi=1200)
+    plt.savefig('ROC',dpi=1200)
     plt.show()
 
 def plot_PRC(y_test, recon_error_test):
@@ -32,4 +32,5 @@ def plot_PRC(y_test, recon_error_test):
     plt.xlim([0.0, 1.0])
     plt.title('2-class Precision-Recall curve: AP={0:0.4f}'.format(
               average_precision))
+    plt.savefig('PRC',dpi=1200)
     plt.show()

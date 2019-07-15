@@ -12,12 +12,14 @@ pytorch>=1.0
 statsmodels>=0.9.0
 # The whole code is coming soon...
 
-PyTorch implementation of paper: "adVAE: a Self-adversarial Variational Autoencoder with Gaussian Anomaly Prior Knowledge for Anomaly Detection".
+PyTorch implementation of paper: "adVAE: a Self-adversarial Variational Autoencoder with Gaussian Anomaly Prior Knowledge for Anomaly Detection", which has been submitted to Knowledge-based Systems.
 
 The file "**self_adVAE-test.ipynb**" shows the results of adVAE. Until now, we have only uploaded some code to show the performance of the adVAE model. The whole code is coming soon...
 
+
 # Show results of adVAE
 The following content is the same as the content in file "**self_adVAE-test.ipynb**".
+
 
 
 
@@ -27,7 +29,7 @@ from __future__ import print_function
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler,MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import (precision_recall_curve, auc,average_precision_score,
                              roc_curve,precision_score, recall_score,  f1_score)
 import statsmodels.api as sm
@@ -35,7 +37,22 @@ from utils.plot_culve import plot_ROC,plot_PRC
 import time
 from load_data.tabular import load_tab_data
 import models 
+import random
+import os
 #import torch.utils.data
+```
+
+
+```python
+SEED=1
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+os.environ['PYTHONHASHSEED'] = str(SEED)
+torch.cuda.manual_seed(SEED)
+torch.cuda.manual_seed_all(SEED)
+torch.backends.cudnn.deterministic=True
+torch.backends.cudnn.benchmark = False
 ```
 
 
@@ -161,19 +178,25 @@ show_results(dataset_name='letter')
 
     computing anomaly score in training dataset...
     computing anomaly score in testing dataset...
-    testing time: 0.014
-    threshold: 0.6604945363580657
-    precision: 0.46107784431137727
-    recall: 0.77
-    f1 score: 0.5767790262172285
+    testing time: 0.077
+    
+
+    C:\Users\33\AppData\Local\conda\conda\envs\wxhdl\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+      return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+    
+
+    threshold 0.2933588232025723
+    precision: 0.6869565217391305
+    recall: 0.79
+    f1 score: 0.7348837209302327
     
 
 
-![png](output_7_2.png)
+![png](output_8_4.png)
 
 
 
-![png](output_7_3.png)
+![png](output_8_5.png)
 
 
 
@@ -183,19 +206,25 @@ show_results(dataset_name='cardio')
 
     computing anomaly score in training dataset...
     computing anomaly score in testing dataset...
-    testing time: 0.013
-    threshold: 0.49615111257352906
+    testing time: 0.016
+    
+
+    C:\Users\33\AppData\Local\conda\conda\envs\wxhdl\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+      return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+    
+
+    threshold 0.4963552884080193
     precision: 0.7051282051282052
     recall: 0.9375
     f1 score: 0.8048780487804879
     
 
 
-![png](output_8_1.png)
+![png](output_9_3.png)
 
 
 
-![png](output_8_2.png)
+![png](output_9_4.png)
 
 
 
@@ -209,19 +238,25 @@ show_results(dataset_name='satellite')
 
     computing anomaly score in training dataset...
     computing anomaly score in testing dataset...
-    testing time: 0.042
-    threshold: 0.1570420017427713
-    precision: 0.5
-    recall: 0.8533333333333334
-    f1 score: 0.6305418719211823
+    testing time: 0.041
+    
+
+    C:\Users\33\AppData\Local\conda\conda\envs\wxhdl\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+      return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+    
+
+    threshold 0.1571764530193421
+    precision: 0.5038759689922481
+    recall: 0.8666666666666667
+    f1 score: 0.6372549019607843
     
 
 
-![png](output_9_2.png)
+![png](output_10_4.png)
 
 
 
-![png](output_9_3.png)
+![png](output_10_5.png)
 
 
 
@@ -231,19 +266,25 @@ show_results(dataset_name='optdigits')
 
     computing anomaly score in training dataset...
     computing anomaly score in testing dataset...
-    testing time: 0.053
-    threshold: 1.3469331920846117
-    precision: 0.5928853754940712
+    testing time: 0.064
+    
+
+    C:\Users\33\AppData\Local\conda\conda\envs\wxhdl\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+      return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+    
+
+    threshold 1.1300515368697348
+    precision: 0.5597014925373134
     recall: 1.0
-    f1 score: 0.7444168734491314
+    f1 score: 0.7177033492822966
     
 
 
-![png](output_10_1.png)
+![png](output_11_3.png)
 
 
 
-![png](output_10_2.png)
+![png](output_11_4.png)
 
 
 
@@ -253,17 +294,23 @@ show_results(dataset_name='pendigits')
 
     computing anomaly score in training dataset...
     computing anomaly score in testing dataset...
-    testing time: 0.029
-    threshold: 0.4767013496700183
-    precision: 0.5473684210526316
+    testing time: 0.031
+    
+
+    C:\Users\33\AppData\Local\conda\conda\envs\wxhdl\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+      return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval
+    
+
+    threshold 0.47716992779044054
+    precision: 0.5454545454545454
     recall: 1.0
-    f1 score: 0.707482993197279
+    f1 score: 0.7058823529411764
     
 
 
-![png](output_11_1.png)
+![png](output_12_3.png)
 
 
 
-![png](output_11_2.png)
+![png](output_12_4.png)
 
