@@ -14,10 +14,10 @@ statsmodels>=0.9.0
 
 PyTorch implementation of paper: "[adVAE: A self-adversarial variational autoencoder with Gaussian anomaly prior knowledge for anomaly detection](https://doi.org/10.1016/j.knosys.2019.105187)", which has been accepted by Knowledge-based Systems.
 
-Since my code is a little "academic", I am still working on reconstructing my code.
-Fortunately, [YeongHyeon](https://github.com/YeongHyeon/adVAE) has shared his implemention of adVAE.
+Since my code is a little "academic", my code is not readable for followers.
+Fortunately, [YeongHyeon](https://github.com/YeongHyeon/adVAE) and [this benchmark](https://github.com/aicenter/GenerativeAD.jl/blob/master/src/models/adVAE.jl) has shared his implemention of adVAE.
 
-The file "**self_adVAE-test.ipynb**" shows the results of adVAE. Until now, we have only uploaded some code to show the performance of the adVAE model. The whole code is coming soon...
+The file "**self_adVAE-test.ipynb**" shows the results of adVAE. Until now, we have only uploaded some code to show the performance of the adVAE model. 
 
 
 # Show results of adVAE
